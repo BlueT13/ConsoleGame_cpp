@@ -5,41 +5,41 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-18", "12-18", "{3A44D141-E8BC-44CF-902B-0289EDF268BC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringToNumber", "AssortrockTasks\StringToNumber\StringToNumber.vcxproj", "{AE1F45E0-AFD5-47F1-8471-E53E100E7141}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringToNumber", "src\StringToNumber\StringToNumber.vcxproj", "{AE1F45E0-AFD5-47F1-8471-E53E100E7141}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NumberToString", "AssortrockTasks\NumberToString\NumberToString.vcxproj", "{D59DB9D9-BC87-4EE5-8905-B02C0F4E0252}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NumberToString", "src\NumberToString\NumberToString.vcxproj", "{D59DB9D9-BC87-4EE5-8905-B02C0F4E0252}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-19", "12-19", "{6FD88C3A-DA93-47F0-BF39-E870532A2C2A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CharConvert", "AssortrockTasks\CharConvert\CharConvert.vcxproj", "{047F5BC5-94B4-4D91-BDD5-108C90AAE1C1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CharConvert", "src\CharConvert\CharConvert.vcxproj", "{047F5BC5-94B4-4D91-BDD5-108C90AAE1C1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringTrim", "AssortrockTasks\StringTrim\StringTrim.vcxproj", "{ECCD4DA8-3632-4F4C-8105-4AA47CF7D2F3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringTrim", "src\StringTrim\StringTrim.vcxproj", "{ECCD4DA8-3632-4F4C-8105-4AA47CF7D2F3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-13", "12-13", "{8402B24A-E107-4D3B-B303-E32E219EB255}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XOR", "AssortrockTasks\XOR\XOR.vcxproj", "{C07113E2-AADA-48FC-951D-E5A075FA8ACC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XOR", "src\XOR\XOR.vcxproj", "{C07113E2-AADA-48FC-951D-E5A075FA8ACC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-14", "12-14", "{1687AAA2-21A0-404D-AE7A-83ED1B4C2153}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParameterInter", "AssortrockTasks\ParameterInter\ParameterInter.vcxproj", "{011CFFCF-3301-4CA3-8A5F-2C0D650316BE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParameterInter", "src\ParameterInter\ParameterInter.vcxproj", "{011CFFCF-3301-4CA3-8A5F-2C0D650316BE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-15", "12-15", "{F7A73758-F96D-4297-A0A8-978B95A4AAE9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringFunction", "AssortrockTasks\StringFunction\StringFunction.vcxproj", "{C9EE3A01-A593-406C-8F68-A85BC9D9BFDC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringFunction", "src\StringFunction\StringFunction.vcxproj", "{C9EE3A01-A593-406C-8F68-A85BC9D9BFDC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-20", "12-20", "{FB1ABEC7-C7F7-473C-BEE3-41F35AEA99D8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpgStart", "AssortrockTasks\TextRpgStart\TextRpgStart.vcxproj", "{89B5F529-829E-4204-AA73-C99801C15BBB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpgStart", "src\TextRpgStart\TextRpgStart.vcxproj", "{89B5F529-829E-4204-AA73-C99801C15BBB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-21", "12-21", "{FF3C5D33-910B-4508-9A77-F241F522A9AE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpgClassVer", "AssortrockTasks\TextRpgClassVer\TextRpgClassVer.vcxproj", "{3897A090-2539-45C0-A15D-9409EE64D78A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpgClassVer", "src\TextRpgClassVer\TextRpgClassVer.vcxproj", "{3897A090-2539-45C0-A15D-9409EE64D78A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-22", "12-22", "{3FEB4D11-B437-4D96-B2DE-609298F2EDA9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleGame", "AssortrockTasks\ConsoleGame\ConsoleGame.vcxproj", "{4BD99390-9A87-4BC4-9CFA-413D0AF16387}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleGame", "src\ConsoleGame\ConsoleGame.vcxproj", "{4BD99390-9A87-4BC4-9CFA-413D0AF16387}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyConsoleGame", "AssortrockTasks\MyConsoleGame\MyConsoleGame.vcxproj", "{535AF216-2CE2-4805-AB2E-D221E7672067}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyConsoleGame", "src\MyConsoleGame\MyConsoleGame.vcxproj", "{535AF216-2CE2-4805-AB2E-D221E7672067}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
