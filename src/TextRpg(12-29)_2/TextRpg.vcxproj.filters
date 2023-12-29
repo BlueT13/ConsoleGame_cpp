@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Monster.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusUnit.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="NameUnit.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="FightUnit.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="TextRpg.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="FightZone.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Town.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="ZoneBase.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Monster.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusUnit.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="NameUnit.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="FightUnit.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="FightZone.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Town.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="ZoneBase.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Actor">
+      <UniqueIdentifier>{ed375364-fb06-4233-916d-df4ed6667165}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{121fe473-68d1-4742-89a4-063439c66f89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{dc88b7c4-a30f-4776-ba2a-ec4ae36134b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{15eb48f4-50fc-404e-9951-ede1fc2ef220}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
