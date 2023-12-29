@@ -53,11 +53,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClassPractice", "src\ClassP
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12-29", "12-29", "{68987758-C895-4AA0-95D3-F881278D3044}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpg(12-29)_1", "src\TextRpg(12-29)_1\TextRpg.vcxproj", "{3B92A26A-DD46-44D4-8194-9046F7D3D227}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpg(12-29)_1", "src\TextRpg(12-29)_1\TextRpg(12-29)_1.vcxproj", "{3B92A26A-DD46-44D4-8194-9046F7D3D227}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpg(12-29)_2", "src\TextRpg(12-29)_2\TextRpg.vcxproj", "{C87AF79C-989A-419B-AFFA-EE9AD42C95C0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpg(12-29)_2", "src\TextRpg(12-29)_2\TextRpg(12-29)_2.vcxproj", "{C87AF79C-989A-419B-AFFA-EE9AD42C95C0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpg(12-29)_3", "src\TextRpg(12-29)_3\TextRpg.vcxproj", "{F28572DF-E654-4919-99B2-3D9E5F07C1E2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextRpg(12-29)_3", "src\TextRpg(12-29)_3\TextRpg(12-29)_3.vcxproj", "{F28572DF-E654-4919-99B2-3D9E5F07C1E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
