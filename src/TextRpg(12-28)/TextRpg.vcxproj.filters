@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="TextRpg.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="FightUnit.cpp" />
+    <ClCompile Include="StatusUnit.cpp" />
+    <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="FightZone.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="FightUnit.h" />
+    <ClInclude Include="StatusUnit.h" />
+    <ClInclude Include="Monster.h" />
+    <ClInclude Include="FightZone.h" />
+  </ItemGroup>
+</Project>
