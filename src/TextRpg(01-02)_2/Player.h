@@ -44,7 +44,7 @@ public:
 		HpReset();
 		MinAtt += 1;
 		MaxAtt += 1;
-		LevelUpExp += 100;
+		LevelUpExp += 10;
 	}
 
 protected:

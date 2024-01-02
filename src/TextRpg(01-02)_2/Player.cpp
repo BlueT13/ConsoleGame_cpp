@@ -8,7 +8,7 @@ Player::Player()
 	Weapon.SetAtt(10);
 
 	SetCurExp(0);
-	SetLevelUpExp(100);
+	SetLevelUpExp(10);
 }
 
 void Player::StatusRenderStart()
@@ -41,10 +41,10 @@ void Player::FightEnd(FightUnit& _Other)
 	// AddExp(_Other.GetExp());
 	// 나의 경험치 GetExp();
 	CurExp += _Other.GetExp();
-	if (CurExp >= LevelUpExp)
+	while (CurExp >= LevelUpExp)
 	{
+		CurExp = CurExp - LevelUpExp;
 		Level++;
-		CurExp = CurExp % LevelUpExp;
 		LevelUp();
 	}
 

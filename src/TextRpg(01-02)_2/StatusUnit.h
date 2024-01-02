@@ -69,6 +69,7 @@ public:
 	
 	void RandomExp(int _Min, int _Max);
 
+	// 랜더링 관련 가상함수
 	virtual void StatusRenderStart();
 	virtual void StatusRenderBase();
 	virtual void StatusRenderEnd();
