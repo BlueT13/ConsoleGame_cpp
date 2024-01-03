@@ -9,7 +9,7 @@ public:
 		return Att;
 	}
 
-	inline void SetAtt(int _Att) 
+	inline void SetAtt(int _Att)
 	{
 		Att = _Att;
 	}
@@ -36,6 +36,6 @@ public:
 
 private:
 	int EquipUp = 0;
-	int Att;
+	int Att = 0;
 };
 
