@@ -62,7 +62,6 @@ void StringAdd(char* _Dest, const char* const _Left, const char* const _Right)
 	}
 }
 
-// strcmp()
 int StringContains(const char* const _Dest, const char* const _Find)
 {
 	int count = 0;
@@ -72,20 +71,23 @@ int StringContains(const char* const _Dest, const char* const _Find)
 	for (int i = 0; i < length; i++)
 	{
 		int check = 0;
-		int input = i;
 		for (int j = 0; j < inputStringCounts; j++)
 		{
-			if (_Dest[input] == _Find[j])
+		
+			if (_Dest[i+j] == _Find[j])
 			{
 				check++;
-				input++;
+			}
+			else
+			{
+				break;
 			}
 		}
-
 		if (check == inputStringCounts)
 		{
 			count++;
 		}
+		
 	}
 	return count;
 }
@@ -106,8 +108,7 @@ int main()
 	{
 		// int Result = StringContains("ababcccccabab", "ab");
 
-		int Result = StringContains("abababab", "ab");
-
+		int Result = StringContains("cccc", "cc");
 		int a = 0;
 	}
 }
