@@ -6,6 +6,7 @@ enum class StringReturn
 	NotEqual
 };
 
+// static_cast<int>(strlen())
 int StringCount(const char* _Ptr)
 {
 	int count = 0;
@@ -16,6 +17,7 @@ int StringCount(const char* _Ptr)
 	return count;
 }
 
+// strcmp()
 StringReturn StringEqual(const char* const _Left, const char* const _Right)
 {
 	int Lcounts = StringCount(_Left);
@@ -39,22 +41,28 @@ StringReturn StringEqual(const char* const _Left, const char* const _Right)
 	return StringReturn::Equal;
 }
 
+// sprintf_s(Arr, "%s%s", "bbb", "ccc");
 void StringAdd(char* _Dest, const char* const _Left, const char* const _Right)
 {
+	int Dcounts = StringCount(_Dest);
 	int Lcounts = StringCount(_Left);
 	int Rcounts = StringCount(_Right);
 
+
 	for (int i = 0; i < Lcounts; i++)
 	{
-		_Dest[i] = _Left[i];
+		_Dest[Dcounts] = _Left[i];
+		Dcounts++;
 	}
 
 	for (int i = Lcounts; i < Lcounts + Rcounts; i++)
 	{
-		_Dest[i] = _Right[i - Lcounts];
+		_Dest[Dcounts] = _Right[i - Lcounts];
+		Dcounts++;
 	}
 }
 
+// strcmp()
 int StringContains(const char* const _Dest, const char* const _Find)
 {
 	int count = 0;
@@ -90,9 +98,8 @@ int main()
 	}
 
 	{
-		char Arr[100] = {};
-		StringAdd(Arr, "ccccc", "ddddd");
-		// "cccccddddd"
+		char Arr[100] = { "aa" };
+		StringAdd(Arr, "bbb", "ccc");
 		int a = 0;
 	}
 
