@@ -73,21 +73,18 @@ int StringContains(const char* const _Dest, const char* const _Find)
 		int check = 0;
 		for (int j = 0; j < inputStringCounts; j++)
 		{
-		
-			if (_Dest[i+j] == _Find[j])
-			{
-				check++;
-			}
-			else
+
+			if (_Dest[i + j] != _Find[j])
 			{
 				break;
 			}
+
+			if (j == inputStringCounts - 1)
+			{
+				count++;
+				i += inputStringCounts - 1;
+			}
 		}
-		if (check == inputStringCounts)
-		{
-			count++;
-		}
-		
 	}
 	return count;
 }
@@ -108,7 +105,7 @@ int main()
 	{
 		// int Result = StringContains("ababcccccabab", "ab");
 
-		int Result = StringContains("cccc", "cc");
+		int Result = StringContains("cccccc", "cc");
 		int a = 0;
 	}
 
