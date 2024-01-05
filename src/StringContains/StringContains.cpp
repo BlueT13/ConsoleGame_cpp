@@ -111,4 +111,6 @@ int main()
 		int Result = StringContains("cccc", "cc");
 		int a = 0;
 	}
+
+	printf_s("merge conflict 테스트 코드");
 }
