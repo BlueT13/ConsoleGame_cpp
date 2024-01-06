@@ -70,7 +70,6 @@ int StringContains(const char* const _Dest, const char* const _Find)
 
 	for (int i = 0; i < length; i++)
 	{
-		int check = 0;
 		for (int j = 0; j < inputStringCounts; j++)
 		{
 
@@ -92,20 +91,15 @@ int StringContains(const char* const _Dest, const char* const _Find)
 int main()
 {
 	{
-		// 오른쪽과 왼쪽이 같아?
 		StringReturn Equal = StringEqual("AAAA", "AAAA");
 	}
 
 	{
 		char Arr[100] = { "aa" };
 		StringAdd(Arr, "bbb", "ccc");
-		int a = 0;
 	}
 
 	{
-		// int Result = StringContains("ababcccccabab", "ab");
-
 		int Result = StringContains("cccccc", "cc");
-		int a = 0;
 	}
 }
