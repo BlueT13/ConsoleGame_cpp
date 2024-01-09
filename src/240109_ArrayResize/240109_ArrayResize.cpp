@@ -68,15 +68,22 @@ public:
 
 		int* tmp = ArrPtr;
 		ArrPtr = new int[_Size];
-		for (int i = 0; i < NumValue; i++)
+
+		int CopySize = NumValue <= _Size ? NumValue : _Size;
+
+		for (int i = 0; i < CopySize; i++)
 		{
 			ArrPtr[i] = tmp[i];
 		}
 
 		NumValue = _Size;
 
-		delete[] tmp;
-		tmp = nullptr;
+		// 항상 null check
+		if (nullptr != tmp)
+		{
+			delete[] tmp;
+			tmp = nullptr;
+		}
 	}
 
 	void Release()
@@ -95,6 +102,9 @@ private:
 
 int main()
 {
+	// 항상 leak확인
+	LeakCheck;
+
 	IntArray NewArray = IntArray(5);
 	// [?][?][?][?][?]
 
