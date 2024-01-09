@@ -1,0 +1,37 @@
+동일한 프로젝트 이름
+커밋로그 시간을 제한 시간 내에
+잘 올라갔는지 확인
+
+프로젝트 속성 - ..\;
+참조에 engine추가
+=======================================================
+1번 배열 만들고
+NumValue를 5에서 10으로
+Arrptr은 현재 1번배열의 주소 가리키고있음
+
+*Release()되기 전에 저장
+
+Release();
+Arrptr은 현재 1번배열 주소 가리키고 있고 1번배열 힙메모리 삭제, Arrptr을 null로
+Arrptr = new int[_size]로 새로운 2번 배열 선언
+========================================================
+
+-Leak Check 복습
+-null check 복습
+
+if(nullptr != tmp)
+{
+delete[] ptr;
+ptr = nullptr;
+}
+
+--------------------------------------------------------------------
+void Print(const char* _Value)
+{
+	std::cout << _Value;
+}
+const char* Text = "AAA";
+Print(Text);
+
+코드 75
+ const 붙여야하는 이유 : 코드영역에 있음
