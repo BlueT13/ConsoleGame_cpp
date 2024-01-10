@@ -1,13 +1,7 @@
 -Leak Check 복습
 -null check 복습
 -char* 복습
-
-if(nullptr != tmp)
-{
-delete[] ptr;
-ptr = nullptr;
-}
-
+-2차원 배열, 이중포인터 복습
 --------------------------------------------------------------------
 void Print(const char* _Value)
 {
@@ -17,8 +11,5 @@ const char* Text = "AAA";
 Print(Text);
 
 코드 75
- const 붙여야하는 이유 : 코드영역에 있음 lvalue, rvalue
+const 붙여야하는 이유 : 코드영역에 있음 lvalue, rvalue
 --------------------------------------
-연산자는 함수라고 생각
-자료형은 클래스라고 생각
-int도 클래스
