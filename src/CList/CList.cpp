@@ -69,18 +69,16 @@ public:
 
 	~MyList()
 	{
-		ListNode* CurNode = Start->Next;  // Start는 더미 노드이므로 실제 데이터가 있는 첫 번째 노드부터 시작
-
-		while (CurNode != End)
+		ListNode* CurNode = Start;
+		while (CurNode)
 		{
-			ListNode* NextNode = CurNode->Next;
-			delete CurNode;
-			CurNode = NextNode;
+			ListNode* Next = CurNode->Next;
+			if (nullptr != CurNode)
+			{
+				delete CurNode;
+				CurNode = Next;
+			}
 		}
-
-		// 마지막으로 더미 노드를 삭제
-		delete Start;
-		delete End;
 	}
 
 	iterator begin()
