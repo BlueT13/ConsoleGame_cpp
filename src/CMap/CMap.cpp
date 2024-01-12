@@ -2,13 +2,14 @@
 #include <map>
 #include <ConsoleEngine/EngineDebug.h>
 
-typedef int KeyType;
-typedef int DataType;
-
+//typedef int KeyType;
+//typedef int DataType;
+//
 // 루트 노드는 부모가 없다는 것을 기억해야 한다.
 // delete this;
 
-class MyPair 
+template<typename KeyType, typename ValueType>
+class MyPair
 {
 public:
 	MyPair()
@@ -16,31 +17,31 @@ public:
 
 	}
 
-	MyPair(KeyType _first, DataType _second)
+	MyPair(KeyType _first, ValueType _second)
 		: Key(_first), Value(_second)
 	{
 
 	}
 
 	KeyType Key = KeyType();
-	DataType Value = DataType();
+	ValueType Value = ValueType();
 
 
 };
 
-// template<typename KeyType, typename ValueType>
+template<typename KeyType, typename ValueType>
 class MyMap
 {
 private:
 	class MapNode
 	{
 	public:
-		MyPair Pair;
+		MyPair<KeyType, ValueType> Pair;
 		MapNode* Parent = nullptr;
 		MapNode* LeftChild = nullptr;
 		MapNode* RightChild = nullptr;
 
-		bool containsNode(const KeyType& _Key) 
+		bool containsNode(const KeyType& _Key)
 		{
 			if (this->Pair.Key == _Key)
 			{
@@ -93,7 +94,7 @@ private:
 			{
 				return this;
 			}
-			
+
 			return LeftChild->minnode();
 		}
 
@@ -154,6 +155,7 @@ private:
 			{
 				RightChild->firstOrderPrint();
 			}
+
 			return;
 		}
 
@@ -182,6 +184,20 @@ private:
 				RightChild->lastOrderPrint();
 			}
 			std::cout << Pair.Key << std::endl;
+			return;
+		}
+
+
+		void clearNode()
+		{
+			if (nullptr != this->LeftChild)
+			{
+				LeftChild->clearNode();
+			}
+			if (nullptr != this->RightChild)
+			{
+				RightChild->clearNode();
+			}
 			delete this;
 			return;
 		}
@@ -291,7 +307,7 @@ public:
 		{
 		}
 
-		MyPair* operator->()
+		MyPair<KeyType, ValueType>* operator->()
 		{
 			MyPair& MapPair = CurNode->Pair;
 			return &MapPair;
@@ -312,9 +328,14 @@ public:
 		MapNode* CurNode = nullptr;
 	};
 
+	~MyMap()
+	{
+		clear();
+	}
+
 	// map은 자료가 무작위일때 효율을 발휘합니다.
 	// 자료가 특정 기준으로 이미 정렬된 상태로 들어간다면 대부분 모두다 맵보다 빠르다.
-	void insert(const MyPair& _Value)
+	void insert(const MyPair<KeyType, ValueType>& _Value)
 	{
 		MapNode* NewNode = new MapNode();
 		NewNode->Pair = _Value;
@@ -342,7 +363,7 @@ public:
 		return Root->containsNode(_Key);
 	}
 
-	iterator end() 
+	iterator end()
 	{
 		return iterator(nullptr);
 	}
@@ -369,7 +390,7 @@ public:
 			delete _Iter.CurNode;
 			return Return;
 		}
-		
+
 		// 교체를 해줘야 한다.
 		// 자식이 하나라도 있는 노드이다.
 		MapNode* ChangeNode = nullptr;
@@ -483,6 +504,14 @@ public:
 		return;
 	}
 
+	void clear()
+	{
+		Root->clearNode();
+		Root = nullptr;
+
+		return;
+	}
+
 
 
 	MapNode* Root = nullptr;
@@ -500,7 +529,7 @@ int main()
 		std::map<int, int> NewMap = std::map<int, int>();
 
 		// 이게 Map의 자료를 추가하는 방법 1입니다.
-		// 방법이 보통 5가 됩니다.
+		// 방법이 보통 5가지
 		{
 			// 맵은 자동으로 내림차순 정렬이 된다.
 			// 방법 1 Pair로 하는법
@@ -509,7 +538,7 @@ int main()
 			// 방법 2 make_pair
 			//NewMap.insert(std::make_pair(2, 12345648915));
 
-			// 배열 3 배열 연산자 식
+			// 방법 3 배열 연산자 식
 			//NewMap[3] = 1;
 
 			// std::map<int, int>::value_type == std::pair<int, int>
@@ -562,7 +591,7 @@ int main()
 	{
 		std::cout << "내 맵" << std::endl;
 		//      Key   Value
-		MyMap NewMap = MyMap();
+		MyMap NewMap = MyMap<int, int>();
 
 		// 오름차순 작은수 => 큰수로 정렬이 됩니다.
 		NewMap.insert(MyPair(10, 0));
