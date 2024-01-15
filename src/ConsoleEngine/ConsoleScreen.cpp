@@ -35,22 +35,26 @@ void ConsoleScreen::CreateScreen(/*&NewScreen => this, */int _ScreenX, int _Scre
 	/*this->*/ScreenX = _ScreenX;
 	/*this->*/ScreenY = _ScreenY;
 
-	if (nullptr != ScreenData)
+	if (0 != ScreenData.size())
 	{
 		MsgBoxAssert("이미 스크린을 만든 상태에서 다시 만들어졌습니다");
 	}
 
-	ScreenData = new char* [ScreenY];
-	if (nullptr == ScreenData)
+	// std::vector<char>* Ptr = new std::vector<char>[ScreenY];
+
+	ScreenData.resize(ScreenY);
+	// ScreenData = new char* [ScreenY];
+	if (0 == ScreenData.size())
 	{
 		MsgBoxAssert("스크린 생성에 실패했습니다. if (nullptr == ScreenData)");
 	}
 
 	for (int y = 0; y < ScreenY; y++)
 	{
-		ScreenData[y] = new char[ScreenX + 2] {0,};
+		ScreenData[y].resize(ScreenX + 2);
+		// ScreenData[y] = new char[ScreenX + 2] {0,};
 
-		if (nullptr == ScreenData[y])
+		if (0 == ScreenData[y].size())
 		{
 			MsgBoxAssert("스크린 생성에 실패했습니다. if (nullptr == ScreenData[y])");
 		}
@@ -66,23 +70,25 @@ void ConsoleScreen::CreateScreen(/*&NewScreen => this, */int _ScreenX, int _Scre
 
 void ConsoleScreen::ReleaseScreen()
 {
+	ScreenData.clear();
+
 	// 지울때는 역순으로 지워야 한다.
-	for (int y = 0; y < ScreenY; y++)
-	{
-		if (nullptr == ScreenData[y])
-		{
-			continue;
-		}
+	//for (int y = 0; y < ScreenY; y++)
+	//{
+	//	if (nullptr == ScreenData[y])
+	//	{
+	//		continue;
+	//	}
 
-		delete[] ScreenData[y];
-		ScreenData[y] = nullptr;
-	}
+	//	delete[] ScreenData[y];
+	//	ScreenData[y] = nullptr;
+	//}
 
-	if (nullptr != ScreenData)
-	{
-		delete[] ScreenData;
-		ScreenData = nullptr;
-	}
+	//if (nullptr != ScreenData)
+	//{
+	//	delete[] ScreenData;
+	//	ScreenData = nullptr;
+	//}
 }
 
 void ConsoleScreen::SetChar(const ConsoleObject& _Object)
@@ -146,12 +152,15 @@ void ConsoleScreen::PrintScreen()
 
 	for (int y = 0; y < ScreenY; y++)
 	{
-		if (nullptr == ScreenData[y])
+		if (0 == ScreenData[y].size())
 		{
 			MsgBoxAssert("존재하지 않은 라인을 출력하려고 했습니다");
 		}
 
-		printf_s(ScreenData[y]);
+		std::vector<char>& Vector = ScreenData[y];
+		char& FirstChar = Vector[0];
+		char* PrintPtr = &FirstChar;
+		printf_s(PrintPtr);
 	}
 
 	ClearScreen();

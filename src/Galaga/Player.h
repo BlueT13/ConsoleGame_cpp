@@ -1,10 +1,11 @@
 #pragma once
 #include <ConsoleEngine/ConsoleObject.h>
+#include <list>
+#include <map>
 
 class Player : public ConsoleObject
 {
 public:
-	void KeyInput();
 
 	bool GetIsFire() 
 	{
@@ -15,6 +16,9 @@ public:
 	{
 		return IsGameEnd;
 	}
+
+protected:
+	void Update() override;
 
 private:
 	bool IsFire = false;

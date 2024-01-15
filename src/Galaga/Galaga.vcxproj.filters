@@ -10,5 +10,6 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Monster.h" />
+    <ClInclude Include="ContentsEnum.h" />
   </ItemGroup>
 </Project>

@@ -1,9 +1,17 @@
 #include "Player.h"
 
+#include <ConsoleEngine/EngineCore.h>
+
+#include <list>
 #include <conio.h>
 
-void Player::KeyInput()
+#include "ContentsEnum.h"
+#include "Bullet.h"
+
+void Player::Update()
 {
+	// SetCore(nullptr);
+
 	IsFire = false;
 
 	int InputCount = _kbhit();
@@ -36,10 +44,13 @@ void Player::KeyInput()
 		break;
 	case 'Q':
 	case 'q':
-		IsFire = true;
+	{
+		Bullet* NewBullet = GetCore()->CreateObject<Bullet>(GalagaUpdateType::Bullet, GalagaRenderType::Bullet);
+		NewBullet->SetPos(GetPos());
 		break;
+	}
 	case '1':
-		IsGameEnd = true;
+		GetCore()->EngineEnd();
 		break;
 	default:
 		break;

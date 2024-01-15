@@ -1,6 +1,7 @@
 #pragma once
 #include "EngineDebug.h"
 #include "ConsoleMath.h"
+#include <vector>
 
 // 화면의 크기를 미리 정의하고
 // 게임이 실행되면 변경이 불가능했죠.
@@ -58,7 +59,8 @@ private:
 	int ScreenX = -1; 
 	int ScreenY = -1;
 
-	char** ScreenData = nullptr; // new int(); => 이걸 언제할지를 프로그래머가 정할수가 있습니다.
+	std::vector<std::vector<char>> ScreenData;
+	// char** ScreenData = nullptr; // new int(); => 이걸 언제할지를 프로그래머가 정할수가 있습니다.
 	          // 최후최후에 
 			  // 내가 원하는 순간 생성을 할수 있다는것.
 	          // 사실 2차원 배열이라는것은 인간이 편의성에 의해서 생각한 것뿐이다.

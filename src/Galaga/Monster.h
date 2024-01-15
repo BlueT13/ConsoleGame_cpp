@@ -3,5 +3,7 @@
 
 class Monster : public ConsoleObject
 {
+protected:
+	void Update() override;
 };
 
