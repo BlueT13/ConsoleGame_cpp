@@ -4,7 +4,7 @@
 
 
 void Monster::Update()
-{	
+{
 	ConsoleObject* CollisionObject = Collision(GalagaUpdateType::Bullet);
 
 	if (nullptr != CollisionObject)
