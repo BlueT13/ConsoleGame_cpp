@@ -21,6 +21,8 @@ protected:
 	void Update() override;
 
 private:
+	//std::list<Monster*>
+	// Monster*
 	bool IsFire = false;
 	bool IsGameEnd = false;
 };

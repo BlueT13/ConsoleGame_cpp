@@ -1,10 +1,23 @@
 #include "Monster.h"
 #include "ContentsEnum.h"
-#include <ConsoleEngine/EngineCore.h>
 
 
 void Monster::Update()
 {
+	--Value;
+	if (0 >= Value)
+	{
+		AddPos(Down);
+		Dir.X *= -1;
+		Value = TurnValue;
+	}
+	else 
+	{
+		AddPos(Dir);
+	}
+
+	// 여기 내부만 만들면 됩니다.
+
 	ConsoleObject* CollisionObject = Collision(GalagaUpdateType::Bullet);
 
 	if (nullptr != CollisionObject)
@@ -13,16 +26,4 @@ void Monster::Update()
 		CollisionObject->Destroy();
 	}
 
-
-	if (0 >= MoveCount)
-	{
-		AddPos(Down);
-		Direction.X *= -1;
-		MoveCount = 10;
-	}
-	else
-	{
-		AddPos(Direction);
-		MoveCount--;
-	}
 }

@@ -10,7 +10,10 @@
 
 void Player::Update()
 {
-	// SetCore(nullptr);
+	// 몬스터가 100만마리 칩시다.
+	// std::list<ConsoleObject*> List = GetCore()->GetUpdateGroup(static_cast<int>(GalagaUpdateType::Monster));
+
+	// List.clear();
 
 	IsFire = false;
 

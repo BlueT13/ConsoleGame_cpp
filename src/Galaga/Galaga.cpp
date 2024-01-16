@@ -15,22 +15,27 @@
 
 int main()
 {
+    // 몬스터 움직임 만들기
+
     EngineCore EngineCore;
 
     EngineCore.Init({ 20, 20 });
 
 
+    Player* NewPlayer = nullptr;
     {
         // Player* NewObject = new Player();
-        Player* NewObject = EngineCore.CreateObject<Player>(GalagaUpdateType::Player, GalagaRenderType::Player);
-        NewObject->SetPos({ EngineCore.Screen.GetScreenX() / 2, EngineCore.Screen.GetScreenY() - 2 });
+        NewPlayer = EngineCore.CreateObject<Player>(GalagaUpdateType::Player, GalagaRenderType::Player);
+        NewPlayer->SetPos({ EngineCore.Screen.GetScreenX() / 2, EngineCore.Screen.GetScreenY() - 2 });
     }
 
     {
         const int MonsterCount = EngineCore.Screen.GetScreenX() / 2;
+        // const int MonsterCount = 1;
         for (int i = 0; i < MonsterCount; i++)
         {
             Monster* NewObject = EngineCore.CreateObject<Monster>(GalagaUpdateType::Monster, GalagaRenderType::Monster);
+            NewObject->SetPlayer(NewPlayer);
             NewObject->SetPos({ i, 0 });
             NewObject->SetRenderChar('&');
         }
