@@ -28,19 +28,35 @@ void Head::Update()
 	{
 	case 'A':
 	case 'a':
-		AddPos(Left);
+		if (MoveDirection != Right)
+		{
+			AddPos(Left);
+			MoveDirection = Left;
+		}
 		break;
 	case 'S':
 	case 's':
-		AddPos(Down);
+		if (MoveDirection != Up)
+		{
+			AddPos(Down);
+			MoveDirection = Down;
+		}
 		break;
 	case 'W':
 	case 'w':
-		AddPos(Up);
+		if (MoveDirection != Down)
+		{
+			AddPos(Up);
+			MoveDirection = Up;
+		}
 		break;
 	case 'D':
 	case 'd':
-		AddPos(Right);
+		if (MoveDirection != Left)
+		{
+			AddPos(Right);
+			MoveDirection = Right;
+		}
 		break;
 	case '1':
 		GetCore()->EngineEnd();
@@ -48,6 +64,9 @@ void Head::Update()
 	default:
 		break;
 	}
+
+
+
 
 	if (nullptr == BodyManager::GetCurBody())
 	{
@@ -62,5 +81,5 @@ void Head::Update()
 		Back = CurBody;
 		BodyManager::ResetBody();
 	}
-	
+
 }
