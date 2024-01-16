@@ -1,8 +1,9 @@
 #pragma once
 #include "ConsoleMath.h"
+#include "ConsoleUpdater.h"
 
 // 전방선언 
-class ConsoleObject
+class ConsoleObject : public ConsoleUpdater
 {
 	friend class EngineCore;
 
@@ -30,26 +31,6 @@ public:
 		Pos += _Dir;
 	}
 
-	virtual void Update()
-	{
-
-	}
-
-	void Destroy()
-	{
-		DeathValue = true;
-	}
-
-	bool IsPendingKill()
-	{
-		return DeathValue;
-	}
-
-	class EngineCore* GetCore()
-	{
-		return Core;
-	}
-
 	template<typename EnumType>
 	ConsoleObject* Collision(EnumType _UpdateOrder)
 	{
@@ -58,21 +39,13 @@ public:
 
 	// 나랑 충돌한 오브젝트
 	ConsoleObject* Collision(int _UpdateOrder);
-	// std::list<ConsoleObject*> CollisionList(int _UpdateOrder);
 
 protected:
 
 private:
-	bool DeathValue = false;
 
 	int2 Pos = { 0, 0 };
 	char RenderChar = '@';
-	class EngineCore* Core = nullptr;
-
-	void SetCore(EngineCore* _Core)
-	{
-		Core = _Core;
-	}
 };
 
 

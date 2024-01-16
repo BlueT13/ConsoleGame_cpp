@@ -1,11 +1,13 @@
 #include "EngineCore.h"
 #include "EngineDebug.h"
+#include "time.h"
 
 void EngineCore::Init(int2 _ScreenSize)
 {
     LeakCheck;
 
-	Screen.CreateScreen(/*&NewScreen => this, */20, 20);
+	Screen.CreateScreen(/*&NewScreen => this, */_ScreenSize.X, _ScreenSize.Y);
+    srand(time(0));
 }
 
 void EngineCore::Start()
@@ -14,6 +16,21 @@ void EngineCore::Start()
     {
         // 밀리세컨드 단위
         Sleep(100);
+
+        {
+            std::map<int, ConsoleUpdater*>::iterator OrderStartIter = AllManager.begin();
+            std::map<int, ConsoleUpdater*>::iterator OrderEndIter = AllManager.end();
+            for (; OrderStartIter != OrderEndIter; ++OrderStartIter)
+            {
+                ConsoleUpdater* Object = OrderStartIter->second;
+                if (nullptr == Object)
+                {
+                    MsgBoxAssert("오브젝트가 nullptr인 경우가 존재합니다.");
+                }
+
+                Object->Update();
+            }
+        }
 
         // 업데이트
         {
@@ -66,8 +83,6 @@ void EngineCore::Start()
         }
 
         Screen.PrintScreen();
-
-        int a = 0;
 
         //// 랜더 릴리즈 구조
         {

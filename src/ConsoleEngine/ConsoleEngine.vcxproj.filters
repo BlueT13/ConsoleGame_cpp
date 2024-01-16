@@ -6,6 +6,7 @@
     <ClInclude Include="ConsoleObject.h" />
     <ClInclude Include="ConsoleMath.h" />
     <ClInclude Include="EngineCore.h" />
+    <ClInclude Include="ConsoleUpdater.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleScreen.cpp" />
@@ -13,5 +14,6 @@
     <ClCompile Include="ConsoleObject.cpp" />
     <ClCompile Include="ConsoleMath.cpp" />
     <ClCompile Include="EngineCore.cpp" />
+    <ClCompile Include="ConsoleUpdater.cpp" />
   </ItemGroup>
 </Project>
