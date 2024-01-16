@@ -67,6 +67,7 @@ void EngineCore::Start()
 
         Screen.PrintScreen();
 
+        int a = 0;
 
         //// 랜더 릴리즈 구조
         {
