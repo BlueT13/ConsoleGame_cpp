@@ -94,28 +94,28 @@ void Head::Update()
 	if (CurBody->GetPos() == GetPos())
 	{
 		CurBody->SetRenderChar('@');
-		Link.push_back(CurBody);
+		Bodys.push_back(CurBody);
 
 		BodyManager::ResetBody();
 	}
 
-	int LinkLength = Link.size();
+	int BodysLength = Bodys.size();
 
-	if (LinkLength > 0)
+	if (BodysLength > 0)
 	{
-		int2 Temp1 = Link[0]->GetPos();
-		Link[0]->SetPos(PrevHeadPos);
+		int2 Temp1 = Bodys[0]->GetPos();
+		Bodys[0]->SetPos(PrevHeadPos);
 
-		for (int i = 1; i < LinkLength; i++)
+		for (int i = 1; i < BodysLength; i++)
         {
-            int2 Temp2 = Link[i]->GetPos();
-            Link[i]->SetPos(Temp1);
+            int2 Temp2 = Bodys[i]->GetPos();
+            Bodys[i]->SetPos(Temp1);
             Temp1 = Temp2;
         }
 
-		for (int i = 1; i < Link.size(); i++)
+		for (int i = 1; i < BodysLength; i++)
 		{
-			if (GetPos() == Link[i]->GetPos())
+			if (GetPos() == Bodys[i]->GetPos())
 			{
 				GetCore()->EngineEnd();
 			}

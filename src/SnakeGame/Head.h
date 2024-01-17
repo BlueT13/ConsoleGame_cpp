@@ -10,6 +10,6 @@ protected:
 
 private:
 	int2 MoveDirection = { 0,0 };
-	std::vector<class Body*> Link;
+	std::vector<class Body*> Bodys;
 };
 
