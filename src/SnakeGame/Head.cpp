@@ -112,5 +112,13 @@ void Head::Update()
             Link[i]->SetPos(Temp1);
             Temp1 = Temp2;
         }
+
+		for (int i = 1; i < Link.size(); i++)
+		{
+			if (GetPos() == Link[i]->GetPos())
+			{
+				GetCore()->EngineEnd();
+			}
+		}
 	}
 }
