@@ -24,11 +24,17 @@ void Head::Update()
 	// X Y
 	// 1 0
 
+	int2 PrevHeadPos = GetPos();
+
 	switch (Select)
 	{
 	case 'A':
 	case 'a':
-		if (MoveDirection != Right)
+		if (MoveDirection == Right)
+		{
+			return;
+		}
+		else
 		{
 			AddPos(Left);
 			MoveDirection = Left;
@@ -36,7 +42,11 @@ void Head::Update()
 		break;
 	case 'S':
 	case 's':
-		if (MoveDirection != Up)
+		if (MoveDirection == Up)
+		{
+			return;
+		}
+		else
 		{
 			AddPos(Down);
 			MoveDirection = Down;
@@ -44,7 +54,11 @@ void Head::Update()
 		break;
 	case 'W':
 	case 'w':
-		if (MoveDirection != Down)
+		if (MoveDirection == Down)
+		{
+			return;
+		}
+		else
 		{
 			AddPos(Up);
 			MoveDirection = Up;
@@ -52,7 +66,11 @@ void Head::Update()
 		break;
 	case 'D':
 	case 'd':
-		if (MoveDirection != Left)
+		if (MoveDirection == Left)
+		{
+			return;
+		}
+		else
 		{
 			AddPos(Right);
 			MoveDirection = Right;
@@ -65,9 +83,6 @@ void Head::Update()
 		break;
 	}
 
-
-
-
 	if (nullptr == BodyManager::GetCurBody())
 	{
 		MsgBoxAssert("먹을수 있는 바디가 존재하지 않습니다.");
@@ -78,8 +93,24 @@ void Head::Update()
 
 	if (CurBody->GetPos() == GetPos())
 	{
-		Back = CurBody;
+		CurBody->SetRenderChar('@');
+		Link.push_back(CurBody);
+
 		BodyManager::ResetBody();
 	}
 
+	int LinkLength = Link.size();
+
+	if (LinkLength > 0)
+	{
+		int2 Temp1 = Link[0]->GetPos();
+		Link[0]->SetPos(PrevHeadPos);
+
+		for (int i = 1; i < LinkLength; i++)
+        {
+            int2 Temp2 = Link[i]->GetPos();
+            Link[i]->SetPos(Temp1);
+            Temp1 = Temp2;
+        }
+	}
 }
